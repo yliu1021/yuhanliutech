@@ -28,7 +28,7 @@ DEBUG = False
 ALLOWED_HOSTS = [
     'www.yuhanliu.tech'
     '0.0.0.0',
-    'https://yuhanliutech.herokuapp.com',
+    'yuhanliutech.herokuapp.com',
 ]
 
 
