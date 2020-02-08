@@ -1,0 +1,119 @@
+* {
+    font-family: "Helvetica Neue", sans-serif;
+}
+
+.dark_text {
+    color: black;
+}
+
+.light_text {
+    color: white;
+}
+
+.white_background {
+    background-color: white;
+}
+
+.background_0 {
+    background-color: #1E90FF;
+}
+
+.background_1 {
+    background-color: #31BDB7;
+}
+
+.background_2 {
+    background-color: #823433;
+}
+
+.background_3 {
+    background-color: #EAA252;
+}
+
+.background_4 {
+    background-color: #EF6461;
+}
+
+.center {
+    text-align: center;
+}
+
+.left {
+    text-align: left;
+}
+
+.right {
+    text-align: right;
+}
+
+h1 {
+    font-size: 700%;
+    font-weight: 200;
+    margin-bottom: 0;
+}
+
+h2 {
+    font-size: 300%;
+    font-weight: 800;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+h3 {
+    font-size: 200%;
+    font-weight: 300;
+    margin-bottom: 0;
+}
+
+.div_section {
+    padding: 100px 20%;
+    opacity: 0.9;
+    transition: 0.2s;
+}
+
+.div_section:hover {
+    opacity: 1.0;
+}
+
+#nav_bar {
+    padding: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    z-index: 1;
+}
+
+#nav_bar a {
+    float: left;
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    color: white;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active {
+  text-decoration: underline;
+}
+
+body {
+    background-color: white;
+    margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
