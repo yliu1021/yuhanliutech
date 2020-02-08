@@ -26,7 +26,9 @@ SECRET_KEY = 'wm_2*=+wq3kx9il%r91)&idtsssclj1tey#xh0lzca@#jg@=%x'
 DEBUG = True
 
 ALLOWED_HOSTS = [
+    'yuhanliu.tech'
     '0.0.0.0',
+    'stark-garden-79719.herokuapp.com',
 ]
 
 
