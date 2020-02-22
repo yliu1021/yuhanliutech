@@ -5,11 +5,20 @@
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
     <meta charset="UTF-8">
     <title>Yuhan Liu</title>
+    <style>
+        .div_section {
+            opacity: 0.9;
+            transition: 0.2s;
+        }
+        .div_section:hover {
+            opacity: 1.0;
+        }
+    </style>
 </head>
 <body>
 
 {# Title #}
-<div class="white_background" style="padding: 100px 20px;width: 50%;margin-left: auto;margin-right: auto;text-align: center;">
+<div class="white_background" style="padding: 100px 20px;width: 80%;margin-left: auto;margin-right: auto;text-align: center;">
     <h1 class="dark_text">Yuhan Liu</h1>
     <h3 class="dark_text">Software Developer</h3>
 </div>
@@ -18,29 +27,29 @@
 <a href="/resume/">
     <div class="background_0 center div_section" id="resume">
         <h2 class="light_text">Resume</h2>
-        <p class="light_text" style="width: 50%;margin: 0 auto">
-            Looking to learn more about my previous experiences? Check out my interactive resume here.
+        <p class="light_text" style="width: 70%;margin: 0 auto">
+            Looking to learn more about my previous experiences? Check out my resume here.
         </p>
     </div>
 </a>
 
 {# Projects #}
-<a href="">
+<a href="/projects/">
     <div class="background_1 center div_section" id="projects">
         <h2 class="light_text">Projects</h2>
-        <p class="light_text" style="width: 50%;margin: 0 auto">
+        <p class="light_text" style="width: 70%;margin: 0 auto">
             Everyone has a hobby. Learn more about the projects I've been working on in my free time here.
         </p>
     </div>
 </a>
 
 {# Blog #}
-<a href="">
+<a href="/blogs/">
     <div class="background_3 center div_section" id="blog">
         <h2 class="light_text">Blog</h2>
-        <p class="light_text" style="width: 50%;margin: 0 auto">
+        <p class="light_text" style="width: 70%;margin: 0 auto">
             If you have a couple of minutes to burn through, take a moment to read through some interesting problems
-            I'm currently working on. Maybe you'll find something interesting.
+            I'm currently working on. Maybe you'll find something cool.
         </p>
     </div>
 </a>
