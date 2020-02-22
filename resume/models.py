@@ -13,6 +13,12 @@ class Experience(models.Model):
 
 
 class Education(models.Model):
-    institution = models.CharField(max_length=30)
+    institution = models.CharField(max_length=50)
     degree = models.CharField(max_length=120)
     gpa = models.FloatField()
+    start_date = models.DateField()
+    end_date = models.DateField()
+    courses = models.TextField()
+
+    def __str__(self):
+        return f'{self.institution}'

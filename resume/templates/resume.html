@@ -16,35 +16,53 @@
     <h1>Resume</h1>
 </div>
 
-<div>
-    <h2>Experiences</h2>
-    <hr/>
-    {% if experiences.count == 0 %}
-        <h3>Error Loading...</h3>
-    {% endif %}
-    {% for experience in experiences %}
-        <div style="padding: 0;">
-            <h3 style="display: inline;">{{ experience.title }} | </h3>
-            <h4 style="display: inline;">{{ experience.organization }}</h4>
-            <p style="float: right;color: #777777">
-                {{ experience.start_date|date:'M, Y'}} -
-                {% if experience.end_date %}
-                    {{ experience.end_date|date:'M, Y'}}
-                {% else %}
-                    present
-                {% endif %}
-            </p>
-        </div>
-        <div style="padding-left: 20px;padding-top: 0;padding-bottom: 0;">
-            <p>{{ experience.description|linebreaks }}</p>
-        </div>
-    {% endfor %}
+<div style="padding: 20px">
+    <div>
+        <h2>Experiences</h2>
+        <hr/>
+        {% if experiences.count == 0 %}
+            <h3>Error Loading...</h3>
+        {% endif %}
+        {% for experience in experiences %}
+            <div style="padding: 0;">
+                <h3 style="display: inline;">{{ experience.title }} | </h3>
+                <h4 style="display: inline;">{{ experience.organization }}</h4>
+                <p style="float: right;color: #777777">
+                    {{ experience.start_date|date:'M, Y'}} -
+                    {% if experience.end_date %}
+                        {{ experience.end_date|date:'M, Y'}}
+                    {% else %}
+                        present
+                    {% endif %}
+                </p>
+            </div>
+            <div style="padding-left: 20px;padding-top: 0;padding-bottom: 0;">
+                <p>{{ experience.description|linebreaks }}</p>
+            </div>
+        {% endfor %}
+    </div>
 
-    <div style="padding: 10px"></div>
-
-    <h2>Education</h2>
-    <hr/>
-
+    <div class="background_0 light_text">
+        <h2>Education</h2>
+        <hr/>
+        {% if educations.count == 0 %}
+            <h3>Error Loading...</h3>
+        {% endif %}
+        {% for education in educations %}
+            <div style="padding: 0;">
+                <h3>{{ education.institution }}</h3>
+                <p style="float: right">
+                    {{ education.start_date|date:'M, Y'}} - {{ education.end_date|date:'M, Y'}}
+                </p>
+                <h4>{{ education.degree }}</h4>
+            </div>
+            <p>GPA: {{ education.gpa }}</p>
+            <p><u>Relevant courses taken</u></p>
+            <div style="padding-left: 20px;padding-top: 0;padding-bottom: 0;">
+                <p>{{ education.courses }}</p>
+            </div>
+        {% endfor %}
+    </div>
 </div>
 
 </body>
