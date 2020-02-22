@@ -6,6 +6,8 @@ git checkout master
 echo "Checking if in DEBUG..."
 if python -c "from yuhanliutech.settings import DEBUG; print(DEBUG)" | grep -q 'False'; then
     echo "Not in DEBUG!"
+    echo "Collecting static files"
+    python manage.py collectstatic
     echo "Pushing to git"
     git push heroku master
     if [[ $? == 0 ]]; then

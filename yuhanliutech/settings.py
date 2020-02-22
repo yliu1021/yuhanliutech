@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'wm_2*=+wq3kx9il%r91)&idtsssclj1tey#xh0lzca@#jg@=%x'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     'www.yuhanliu.tech',
@@ -42,8 +42,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'homepage',
-    'blog',
+    'homepage.apps.HomepageConfig',
+    'resume.apps.ResumeConfig',
+    'projects.apps.ProjectsConfig',
+    'blogs.apps.BlogConfig',
 ]
 
 MIDDLEWARE = [

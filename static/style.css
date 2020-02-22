@@ -67,12 +67,6 @@ h3 {
 
 .div_section {
     padding: 100px 20%;
-    opacity: 0.9;
-    transition: 0.2s;
-}
-
-.div_section:hover {
-    opacity: 1.0;
 }
 
 #nav_bar {
