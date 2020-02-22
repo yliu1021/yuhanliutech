@@ -12,7 +12,7 @@ if python -c "from yuhanliutech.settings import DEBUG; print(DEBUG)" | grep -q '
     git push heroku master
     if [[ $? == 0 ]]; then
         echo "Opening in browser..."
-        open "https://yuhanliutech.herokuapp.com/home/"
+        open "http://www.yuhanliu.tech/"
     fi
 else
     echo "You're in DEBUG mode!"
