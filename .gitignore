@@ -2,9 +2,13 @@
 /venv
 __pycache__/
 pyvenv.cfg
+*.pyc
 
 # Pycharm
 .idea/
 
 # Misc
 scripts/
+
+# macOS
+.DS_Store
