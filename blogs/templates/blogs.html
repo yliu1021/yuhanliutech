@@ -5,6 +5,35 @@
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
     <meta charset="UTF-8">
     <title>Yuhan Liu - Blogs</title>
+    <style>
+        div {
+            padding: 80px;
+        }
+
+        .collapsible {
+            background: transparent;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            outline: none;
+            transition-duration: 0.2s;
+            text-align: left;
+        }
+
+        .collapsible:hover {
+            text-decoration: underline;
+        }
+
+        .content {
+            padding: 0 18px;
+            display: none;
+            overflow: hidden;
+        }
+    </style>
+    <script type="text/javascript" id="MathJax-script" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-mml-chtml.js">
+    </script>
 </head>
 <body>
 
@@ -15,10 +44,41 @@
 </div>
 
 <div style="padding: 20px">
-    <h3>
-        This page is currently in progress! Please check back later.
-    </h3>
+    {% for blog in blogs %}
+        <div class="{% cycle '' 'background_3 light_text' %}">
+            <button type="button" class="collapsible" style="color: {% cycle 'black' 'white' %}">
+                <h2>
+                    {{ blog.title }}
+                </h2>
+                <p style="color: {% cycle 'gray' 'white' %};font-size: 150%">
+                    {{ blog.published_date|date:'M d, Y' }}
+                </p>
+            </button>
+            <div class="content">
+                <hr/>
+                <p>
+                    {{ blog.blog|safe|linebreaks }}
+                </p>
+            </div>
+        </div>
+    {% endfor %}
 </div>
 
+<script>
+    const coll = document.getElementsByClassName("collapsible");
+    let i;
+
+    for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            const content = this.nextElementSibling;
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        });
+    }
+</script>
 </body>
 </html>

@@ -2,7 +2,6 @@ import os
 import mimetypes
 
 from django.shortcuts import render
-from django.conf import settings
 from django.http import HttpResponse, Http404
 
 from .models import Experience, Education, Skill, Award
