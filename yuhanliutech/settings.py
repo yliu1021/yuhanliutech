@@ -30,6 +30,7 @@ ALLOWED_HOSTS = [
     '0.0.0.0',
     'yuhanliutech.herokuapp.com',
     '127.0.0.1',
+    '192.168.1.253',
 ]
 
 
