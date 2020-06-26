@@ -38,6 +38,7 @@ urlpatterns += [
 
 urlpatterns += [
     path('resume/', resume.views.index, name='resume'),
+    path('resume/Yuhan_LIU_UCLA.pdf', resume.views.download, name='resume_download')
 ]
 
 urlpatterns += [
