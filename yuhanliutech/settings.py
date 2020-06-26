@@ -23,12 +23,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'wm_2*=+wq3kx9il%r91)&idtsssclj1tey#xh0lzca@#jg@=%x'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     'www.yuhanliu.tech',
-    '0.0.0.0',
     'yuhanliutech.herokuapp.com',
+    'localhost',
     '127.0.0.1',
 ]
 

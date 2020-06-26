@@ -9,14 +9,46 @@
         div {
             padding: 80px;
         }
+
+        a:link {
+            color: #1E90FF;
+            background-color: transparent;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:visited {
+            color: #1E90FF;
+            background-color: transparent;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            color: black;
+            background-color: transparent;
+            text-decoration: underline;
+        }
+
+        a:active {
+            color: yellow;
+            background-color: transparent;
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
 <div class="background_0 light_text" style="padding: 20px">
-    <h1>Resume</h1>
+    <header style="width: 100%;vertical-align: text-bottom;">
+        <h1 style="content: none;">Resume</h1>
+        <a href="Yuhan_LIU_UCLA.pdf" target="_blank" style="background: white;border-radius: 5px;padding: 10px;">
+            View as PDF
+        </a>
+    </header>
 </div>
 
 <div style="padding: 20px">
+    {#Experiences section#}
     <div>
         <h2>Experiences</h2>
         <hr/>
@@ -27,7 +59,7 @@
             <div style="padding: 0;">
                 <h3 style="display: inline;">{{ experience.title }} | </h3>
                 <h4 style="display: inline;">{{ experience.organization }}</h4>
-                <p style="float: right;color: #777777">
+                <p style="float: right;color: gray;">
                     {{ experience.start_date|date:'M, Y'}} -
                     {% if experience.end_date %}
                         {{ experience.end_date|date:'M, Y'}}
@@ -42,6 +74,7 @@
         {% endfor %}
     </div>
 
+    {#Education section#}
     <div class="background_0 light_text">
         <h2>Education</h2>
         <hr/>
@@ -50,18 +83,54 @@
         {% endif %}
         {% for education in educations %}
             <div style="padding: 0;">
-                <h3>{{ education.institution }}</h3>
+                <h3 style="display: inline;">{{ education.institution }}</h3>
                 <p style="float: right">
                     {{ education.start_date|date:'M, Y'}} - {{ education.end_date|date:'M, Y'}}
                 </p>
-                <h4>{{ education.degree }}</h4>
+                <p style="margin-top: 0;">{{ education.degree }}</p>
             </div>
-            <p>GPA: {{ education.gpa }}</p>
-            <p><u>Relevant courses taken</u></p>
+            <p style="padding-left: 4px">GPA: {{ education.gpa }}</p>
+            <p style="padding-left: 4px"><i>Relevant courses taken</i></p>
             <div style="padding-left: 20px;padding-top: 0;padding-bottom: 0;">
-                <p>{{ education.courses }}</p>
+                <p>{{ education.courses|safe }}</p>
             </div>
         {% endfor %}
+    </div>
+
+    {#Skills section#}
+    <div>
+        <h2>Skills</h2>
+        <hr/>
+        {% if skills.count == 0 %}
+            <h3>Error Loading...</h3>
+        {% endif %}
+        <div style="padding: 0;display: grid;grid-template-columns: auto auto auto;" class="dark_text">
+            {% for skill in skills %}
+                <div style="padding: 0px">
+                    <h3>{{ skill.name }}</h3>
+                    <p style="color: gray">{{ skill.years_experience }} year{{ skill.years_experience|pluralize:",s" }}</p>
+                    {{ skill.expertise_text }}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    {#Awards section#}
+    <div class="background_0 light_text">
+        <h2>Awards & Achievements</h2>
+        <hr/>
+        {% if awards.count == 0 %}
+            <h3>Error Loading...</h3>
+        {% endif %}
+        <div style="padding: 0;display: grid;grid-template-columns: auto auto auto;grid-column-gap: 5%;">
+            {% for award in awards %}
+                <div style="padding: 0">
+                    <h3>{{ award.name }}</h3>
+                    <p style="color: #EEEEEE">{{ award.received_date|date:"Y" }}</p>
+                    {{ award.description }}
+                </div>
+            {% endfor %}
+        </div>
     </div>
 </div>
 
